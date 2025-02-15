@@ -49,6 +49,10 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         function coldAdd(){
             cold_count = cold_count + 1;
         }
+	var allergy_pct = allergy_count / 4;
+	var cold_pct = 1 - allergy_pct;
+	var resultText = document.getElementById("res");
+	resultText.innerHTML = "Probability it is allergies = " + allergy_pct + "<br>Probability it is a cold = " + cold_pct;
 
   </script>
 
@@ -132,6 +136,17 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 4</h1>
 	</div>
+	<div id="content" class= "w3-container">
+		<p>Are your symptoms seasonal or chronic?</p>
+	</div>
+	<a href="#results" onclick="allergyAdd();"class="w3-btn w3-black"> Seasonal </a>
+	<a href="#results" onclick="coldAdd();" class="w3-btn w3-black"> Chronic </a>
+</div>
+<div class = "page" id="results">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Results</h1>
+	</div>
+	<p id="res"></p>
 </div>
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
